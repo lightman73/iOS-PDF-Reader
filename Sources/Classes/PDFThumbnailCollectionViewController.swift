@@ -63,7 +63,7 @@ internal final class PDFThumbnailCollectionViewController: UICollectionViewContr
         
         cell.imageView?.image = pageImages?[indexPath.row]
         cell.pageNumberLabel.text = String(indexPath.row + 1)
-        cell.alpha = currentPageIndex == indexPath.row ? 1 : 0.2
+        cell.alpha = currentPageIndex == indexPath.row ? 1 : 0.5
         
         return cell
     }
