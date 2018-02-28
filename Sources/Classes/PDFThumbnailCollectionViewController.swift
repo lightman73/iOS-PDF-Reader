@@ -62,6 +62,7 @@ internal final class PDFThumbnailCollectionViewController: UICollectionViewContr
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! PDFThumbnailCell
         
         cell.imageView?.image = pageImages?[indexPath.row]
+        cell.pageNumberLabel.text = String(indexPath.row + 1)
         cell.alpha = currentPageIndex == indexPath.row ? 1 : 0.2
         
         return cell
