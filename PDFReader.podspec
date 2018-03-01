@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.source                = { :git => "https://github.com/Alua-Kinzhebayeva/iOS-PDF-Reader.git", :tag => s.version.to_s }
   s.ios.deployment_target = "8.0"
   s.source_files          = "Sources/Classes/*.swift"
-  s.resources             = "Sources/Assets/*.storyboard"
+  s.resources             = "Sources/Assets/*"
   s.requires_arc          = true
 end
