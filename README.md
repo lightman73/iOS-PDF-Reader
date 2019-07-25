@@ -1,3 +1,5 @@
+# Deprecated in favor of [PDFKIT](https://developer.apple.com/documentation/pdfkit) for iOS 11+ apps
+
 # iOS-PDF-Reader
 [![Version](https://img.shields.io/cocoapods/v/PDFReader.svg?style=flat)](http://cocoapods.org/pods/PDFReader)
 [![License](https://img.shields.io/cocoapods/l/PDFReader.svg?style=flat)](http://cocoapods.org/pods/PDFReader)
@@ -15,7 +17,7 @@ PDF Reader for iOS written in Swift
 ## Requirements
 
 - iOS 8.0+
-- Swift 4
+- Swift 4.2
 
 ## Installation
 
@@ -64,7 +66,7 @@ let document = PDFDocument(url: documentFileURL)!
 ```swift
 let remotePDFDocumentURLPath = "http://devstreaming.apple.com/videos/wwdc/2016/201h1g4asm31ti2l9n1/201/201_internationalization_best_practices.pdf"
 let remotePDFDocumentURL = URL(string: remotePDFDocumentURLPath)!
-let document = PDFDocument(url: documentRemoteURL)!
+let document = PDFDocument(url: remotePDFDocumentURL)!
 ```
 
 ##### From Data

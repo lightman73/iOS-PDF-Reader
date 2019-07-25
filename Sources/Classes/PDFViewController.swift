@@ -116,7 +116,7 @@ public final class PDFViewController: UIViewController {
     }
     
     /// Slides horizontally (from left to right, default) or vertically (from top to bottom)
-    public var scrollDirection: UICollectionViewScrollDirection = .horizontal {
+    public var scrollDirection: UICollectionView.ScrollDirection = .horizontal {
         didSet {
             if collectionView == nil {  // if the user of the controller is trying to change the scrollDiecton before it
                 _ = view                // is on the sceen, we need to show it ofscreen to access it's collectionView.
@@ -126,6 +126,9 @@ public final class PDFViewController: UIViewController {
             }
         }
     }
+    
+    /// Reset page when its unpresented
+    public var resetZoom: Bool = false
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -278,6 +281,9 @@ extension PDFViewController: UIScrollViewDelegate {
         }
         
         if updatedPageIndex != currentPageIndex {
+            if resetZoom {
+                self.collectionView.reloadItems(at: [IndexPath(item: currentPageIndex, section: 0)])
+            }
             currentPageIndex = updatedPageIndex
             thumbnailCollectionController?.currentPageIndex = currentPageIndex
         }
