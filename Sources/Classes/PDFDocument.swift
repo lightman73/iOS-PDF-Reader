@@ -175,7 +175,7 @@ public struct PDFDocument {
         context.saveGState()
         
         // Flip the context so that the PDF page is rendered right side up.
-        context.translateBy(X: 0.0, y: scaledPageRect.height)
+        context.translateBy(x: 0.0, y: scaledPageRect.height)
         context.scaleBy(x: 1.0, y: -1.0)
         let transform = page.getDrawingTransform(CGPDFBox.mediaBox, rect: scaledPageRect, rotate: 0, preserveAspectRatio: true)
         context.concatenate(transform)
